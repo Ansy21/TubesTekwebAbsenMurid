@@ -1,5 +1,12 @@
-Kelas AIG - A
-Anggota :
-2250081025 | ANWAR SYARIFUDDIN ADITYA SITEPU
-2250081062 | HERLY SETIAWAN NURHIDAYAT
-2250081067 | ASTRIANI KOMERI
+===============================
+Proyek Kelas AIG - Kelas A
+===============================
+
+**Anggota Kelompok:**
+
+- **Anwar Syarifuddin Aditya Sitepu**  
+  NIM: 2250081025  
+- **Herly Setiawan Nurhidayat**  
+  NIM: 2250081062  
+- **Astriani Komeri**  
+  NIM: 2250081067
