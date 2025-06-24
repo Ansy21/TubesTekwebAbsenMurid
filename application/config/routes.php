@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['absensi'] = 'absensi/index';
+$route['absensi/(:any)'] = 'absensi/index/$1';
+$route['absensi/rekap/(:any)'] = 'absensi/rekap/$1';
+$route['absensi/rekap'] = 'absensi/rekap';
+$route['absensi/simpan'] = 'absensi/simpan';

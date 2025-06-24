@@ -66,4 +66,42 @@ class Murid extends CI_Controller {
         $this->session->set_flashdata('sukses', 'Data murid berhasil dihapus.');
         redirect('murid/index');
     }
+
+    public function absen_form() {
+        $data['murid'] = $this->Murid_model->get_all();
+        $this->load->view('absen_form', $data);
+    }
+    
+    public function simpan_absen() {
+        $tanggal = $this->input->post('tanggal');
+        $absen_data = [];
+    
+        foreach ($this->input->post('status') as $murid_id => $status) {
+            $absen_data[] = [
+                'murid_id' => $murid_id,
+                'tanggal'  => $tanggal,
+                'status'   => $status
+            ];
+        }
+    
+        $this->load->model('Absensi_model');
+        $this->Absensi_model->simpan_absen($absen_data);
+        $this->session->set_flashdata('sukses', 'Absensi berhasil disimpan.');
+        redirect('murid/absen_form');
+    }
+
+    public function rekap() {
+        $kelas = $this->input->get('kelas');
+        $tanggal = $this->input->get('tanggal');
+    
+        $this->load->model('Absensi_model');
+        $data['rekap'] = $this->Absensi_model->rekap_per_murid($kelas, $tanggal);
+        $data['kelas'] = $this->daftar_kelas;
+        $data['kelas_aktif'] = $kelas;
+        $data['tanggal'] = $tanggal;
+    
+        $this->load->view('rekap_absensi', $data);
+    }
+    
+    
 }
